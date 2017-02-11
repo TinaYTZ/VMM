@@ -9,6 +9,8 @@
   "author": "Yuting",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.14.1",
+    "http": "0.0.0",
     "mongodb": "^2.2.22"
   }
 }
