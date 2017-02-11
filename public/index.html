@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>VMM</title>
+
+  </head>
+  <body>
+    <h1>visualize speech</h1>
+
+<div class="text"></div>
+        <button onclick="speak('hello world')">Talk</button>
+        <div id="audio"></div>
+
+        <script src="speakClient.js"></script>
+          <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+        <script>
+
+
+
+if (annyang) {
+  // Add our commands to annyang
+  annyang.addCallback('result', function(phrases){
+
+    speak(phrases[0]);
+    console.log(phrases[0]);
+    var element = $('<div>'+phrases[0]+'</div>');
+    $('div.text').append(element);
+  });
+  annyang.addCommands({
+    'hello': function() { console.log('Hello world!'); }
+  });
+
+  // Tell KITT to use annyang
+  SpeechKITT.annyang();
+
+  // Define a stylesheet for KITT to use
+  SpeechKITT.setStylesheet('https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+  // Render KITT's interface
+  SpeechKITT.vroom();
+}
+</script>
+</body>
+
+</html>
