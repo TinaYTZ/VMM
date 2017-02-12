@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>Tretris</title>
+
+    <link rel="stylesheet" href="public/blockrain.css">
+
+  </head>
+  <body>
+    <div id="audio"></div>
+
+    <div class="game" style="width:400px; height:750px;"></div>
+      <div class="blockrain-game-over">
+        <div class="blockrain-game-over-msg">
+          Game Over
+        </div>
+        <a class="blockrain-btn blockrain-game-over-btn">
+          Play Again
+        </a>
+      </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+    <script src="public/js/blockrain.js/src/blockrain.jquery.libs.js"></script>
+    <script src="public/js/blockrain.js/src/blockrain.jquery.src.js"></script>
+    <script src="public/js/blockrain.js/src/blockrain.jquery.themes.js"></script>
+    <script>
+         $('.blockrain-game-over').hide();
+         $('.game').blockrain();
+      //   if (annyang) {
+      //     annyang.addCallback('result', function(phrases){
+      //
+      //       console.log(phrases[0]);
+      //       var element = $('<div>'+phrases[0]+'</div>');
+      //       $('div.text').append(element);
+      //       if (phrases[0]) {
+      //         switch(phrases[0]) {
+      //           case 'left': /*a*/    moveLeft(true); break;
+      //           case 'right': /*d*/    moveRight(true); break;
+      //           case 'drop': /*s*/    drop(true); break;
+      //           case 'rotate': /*w*/    game._board.cur.rotate('right'); break;
+      //         }
+      //       }
+      //     });
+      //     annyang.addCommands({
+      //       'hello': function() { console.log('Hello world!'); }
+      //     });
+      //
+      //
+      //     SpeechKITT.annyang();
+      //
+      //     // Define a stylesheet for KITT to use
+      //     SpeechKITT.setStylesheet('https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+      //
+      //     // Render KITT's interface
+      //     SpeechKITT.vroom();
+      //
+      // }
+
+    </script>
+  </body>
+</html>
